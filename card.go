@@ -1,17 +1,16 @@
 package main
 
 type Card struct {
-	text string
-	faceValue int
-	suit int
+	Text      string `json:"text"`
+	FaceValue int `json:"faceValue"`
+	Suit      int `json:"suit"`
 }
 
-func getNewCard(faceValue int, suit int) Card {
-	var value string
-	var suits string
+func getNewCard(faceValue, suit int) Card {
+	var value, suits string
 	switch faceValue {
 	case 1:
-		value = "One"
+		value = "Ace"
 	case 2:
 		value = "Two"
 	case 3:
@@ -36,8 +35,6 @@ func getNewCard(faceValue int, suit int) Card {
 		value = "Queen"
 	case 13:
 		value = "King"
-	case 14:
-		value = "Ace"
 	default:
 		value = "Joker"
 	}
@@ -56,8 +53,8 @@ func getNewCard(faceValue int, suit int) Card {
 	}
 
 	return Card{
-		text:     value + " of " + suits,
-		faceValue: faceValue,
-		suit:      suit,
+		value + " of " + suits,
+		faceValue,
+		suit,
 	}
 }

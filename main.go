@@ -2,15 +2,11 @@ package main
 
 import "fmt"
 
-
-
 func main() {
-	cards:= getNewDeck()
-	for _, el := range cards {
-		fmt.Println(el.text)
-	}
-
-
+	deck := getNewDeck()
+	deck.print()
+	fmt.Println()
+	hand, deck:=deal(5, deck)
+	hand.saveToFile("./hand.json")
+	deck.saveToFile("./state.json")
 }
-
-
