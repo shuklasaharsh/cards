@@ -55,9 +55,6 @@ func (d deck) saveToFile(fileName string) error {
 	return nil
 }
 
-func (d deck) saveHands() error {
-	return nil
-}
 
 func readFromFile() (deck, error) {
 	var d deck
